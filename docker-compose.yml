@@ -1,0 +1,24 @@
+services:
+  db:
+    image: postgres:16-alpine
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: app
+      POSTGRES_PASSWORD: app
+      POSTGRES_DB: app
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    restart: unless-stopped
+  meilisearch:
+    image: getmeili/meilisearch:v1.10.3
+    ports:
+      - "7700:7700"
+    environment:
+      MEILI_MASTER_KEY: change-me-meili
+    volumes:
+      - meilisearch-data:/meili_data
+    restart: unless-stopped
+volumes:
+  db-data:
+  meilisearch-data:
