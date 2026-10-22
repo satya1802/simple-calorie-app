@@ -5,7 +5,7 @@
 <!-- sdlc:auto:start overview -->
 build simple calorie app
 
-**Documentation version:** v1
+**Documentation version:** v3
 <!-- sdlc:auto:end overview -->
 
 ## Contents
@@ -14,15 +14,15 @@ build simple calorie app
 | Document | State |
 |---|---|
 | [Requirements](requirements/README.md) | v1 approved |
-| [Architecture](architecture/README.md) | 1 entry |
-| [Development](development/README.md) | 1 entry |
+| [Architecture](architecture/README.md) | 21 entries |
+| [Development](development/README.md) | 17 entries |
 | [Testing](testing/README.md) | 1 entry |
 | [Deployment](deployment/README.md) | 1 entry |
 | [Maintenance](maintenance/README.md) | 1 entry |
 | [Data model](architecture/data-model.md) | generated |
 | [API (OpenAPI)](architecture/api/openapi.yaml) | generated |
 | [Decisions (ADRs)](architecture/adr/README.md) | 4 decisions |
-| [Sprint plan](development/sprint-plan.md) | not generated yet |
+| [Sprint plan](development/sprint-plan.md) | 9 sprints |
 | [Developer guide](development/developer-guide.md) | generated |
 | [API reference](development/api-reference.md) | 1 route |
 | [Test report](testing/test-report.md) | not run yet |
@@ -30,7 +30,7 @@ build simple calorie app
 | [Runbook](deployment/runbook.md) | not deployed yet |
 | [Release notes](deployment/release-notes.md) | 0 releases |
 | [Traceability matrix](traceability-matrix.md) | 31 requirements |
-| [Changelog](CHANGELOG.md) | 1 version |
+| [Changelog](CHANGELOG.md) | 3 versions |
 <!-- sdlc:auto:end contents -->
 
 ## Open gaps
@@ -51,11 +51,21 @@ build simple calorie app
 
 ### Architecture
 
-- Architecture phase has not started - no design artifacts, diagrams, data model, or screen definitions exist yet to document.
+- No formal requirements or NFR catalog was supplied alongside this architecture -- only ad hoc citations (NFR-007, NFR-015, NFR-018, NFR-024, NFR-025, US-030) appear inside the technology-decision rationale, so full traceability against all known requirement keys US-001..US-031 cannot be confirmed from this input alone.
+- No industry/compliance domain skill was named for this project; the GDPR-style handling (EU region, export/delete) is a design choice stated in the input, not a verified regulatory mapping -- treat as general good practice, not confirmed legal compliance.
+- No explicit foreign-key/index/constraint details were given beyond field names -- schema-level constraints are implied, not documented.
+- Endpoints are not individually mapped to specific requirement ids (US-001..US-031) in the input -- only the technology-decision section names specific ids (US-030 and NFR-007/015/018/024/025).
+- No networking/VPC topology, scaling policy, or monitoring/alerting setup was specified for the Fargate services or RDS instance.
 
 ### Development
 
-- Development phase has not started - no planning or implementation records exist yet to document.
+- No execution/completion status (not-started/in-progress/done) reported for any sprint or backlog item
+- No code commits, pull requests, or build artifacts provided in this input
+- No test results included for this phase
+- Explicit sprint-to-story-id assignment is not given in the input; associations below are inferred only from matching sprint goal text to story titles and should be confirmed
+- No confirmation these stories were actually completed within this sprint window
+- No completion status reported for any story or task in this epic
+- Input does not cite a formal data-protection/compliance skill module beyond the plain mention of 'GDPR' in the sprint goal text; recommend a human confirm whether a full GDPR control mapping (e.g. lawful basis, data retention limits, breach notification) has been addressed anywhere outside this plan
 
 ### Testing
 
